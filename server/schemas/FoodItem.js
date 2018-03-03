@@ -16,5 +16,6 @@ let foodItem = mongoose.Schema({
 	contact : String,
 	//_id auto created
 })
+//hello
 //NOTE: do not arrow function
 module.exports = mongoose.model('FoodItem', foodItem)
