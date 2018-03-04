@@ -8,7 +8,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/test', function(req, res, next) {
-  res.send(JSON.stringify({'test':true}));
+  res.json({"hello":"hellos"})
 });
 
 router.get('/post', function(req, res, next){

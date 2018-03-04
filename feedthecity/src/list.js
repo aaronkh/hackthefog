@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import {food} from './foodbank.js'
 import {Button, Icon, MediaBox, CardPanel} from 'react-materialize'
 
-// function fn(){
-// 	document.getElementById('item').style.visibility='visible';
-// }
 class ListItem extends Component{
 	constructor(props){
 		super(props)

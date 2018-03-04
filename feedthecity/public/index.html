@@ -19,7 +19,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Sub</title>
     <!-- Import Google Icon Font -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Import materialize.css -->
@@ -44,5 +44,11 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+    <script type="text/javascript">
+      if(document.title.includes('ub'))
+        $('body').css('background', 'powderblue')
+      else
+        $('body').css('background','white')
+    </script>
   </body>
 </html>
