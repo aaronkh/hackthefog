@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {food} from './foodbank.js'
-import {Button, Icon, MediaBox, CardPanel} from 'react-materialize'
 
+import {Button, Icon, MediaBox, CardPanel} from 'react-materialize'
+// import axios from 'axios'
+import $ from 'jquery'
+const ip = '192.168.43.35:8080/'
 class ListItem extends Component{
 	constructor(props){
 		super(props)
@@ -35,6 +38,7 @@ class ListItem extends Component{
 				</div>)
 	}
 }
+
 class ListItems extends Component{
 
 	constructor(props){
@@ -47,6 +51,27 @@ class ListItems extends Component{
 		this.props.onSelectPage("home")
 	}
 	render(){
+		 $.ajax({
+            url: "http://192.168.43.35:8080/foodbanklocation/list",
+            type: "POST",
+            crossDomain: true,
+            
+  xhrFields: {
+    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+    // This can be used to set the 'withCredentials' property.
+    // Set the value to 'true' if you'd like to pass cookies to the server.
+    // If this is enabled, your server must respond with the header
+    // 'Access-Control-Allow-Credentials: true'.
+    withCredentials: false
+  },
+
+            data: JSON.stringify({"ok":true}),
+            dataType: "json",
+            success: function (response) {
+                console.log(response)
+            },
+            
+        });
 		let temp = JSON.parse(food)
 		let addresses = []
 		return temp.map((obj, i) => {

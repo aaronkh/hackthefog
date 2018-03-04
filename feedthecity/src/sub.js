@@ -3,6 +3,9 @@ import {food, account} from './foodbank.js'
 import {Button, Icon, Input,Card, Preloader } from 'react-materialize'
 import Dropzone from 'react-dropzone'
 
+import axios from 'axios'
+
+const ip = 'http://www.192.168.43.35:8080/'
 //TODO: request location
 class Submission extends Component{
 	constructor(props){
@@ -13,6 +16,7 @@ class Submission extends Component{
 			category:'',
 			description:'',
 			loading: false,
+			contact: '',
 			address:'600 Pennsylvania Ave, Washington D.C.'
 		}
 	}
@@ -38,9 +42,22 @@ class Submission extends Component{
 		this.props.onSelectPage("home")
 	}
 	geoCallback(pos){
-		this.setState({loading:false})
-		alert("Thanks for the submission!")
-		window.location.reload()
+		let temp = {
+			"contact": this.state.contact,
+			"location" : {
+				"address": this.state.address,
+				"coord":{
+					"lat": pos.coords.latitude,
+					"long": pos.coords.longitude
+				}
+			}
+		}
+		console.log(ip)
+		axios.post(ip+'userlocation/post',
+  				{data:JSON.stringify(temp)}
+  		)
+		.then(function(res){console.log(res)})
+		.catch(function(err){console.log(err)})
 	}
 	sub(){
 		this.setState({loading:true})
