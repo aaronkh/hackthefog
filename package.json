@@ -1,0 +1,19 @@
+{
+  "name": "hackthefog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aahuangithub/hackthefog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aahuangithub/hackthefog/issues"
+  },
+  "homepage": "https://github.com/aahuangithub/hackthefog#readme"
+}
