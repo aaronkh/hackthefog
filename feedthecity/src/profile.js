@@ -7,16 +7,17 @@ class Profile extends Component{
 		super(props)
 		this.state={}
 	}
-	render(){
-		return (<div className = "center-text">
-					<div>
-						<font size = "10">
-
-						</font>
-					</div>
-				
-				</div>)
+// 	render(){
+// 		let temp = JSON.parse(account)
+// 		return temp.maps((obj,i) => {}
+// 		return (<div className = "center-text">
+// 					<div>
+// 						<font size = "10">
+// 							ID : {obj.id}
+// 						</font>
+// 					</div>
+// 				</div>)
+// 	})
 	}
-}
 
 export default Profile

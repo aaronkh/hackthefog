@@ -3,6 +3,7 @@ import {food, account} from './foodbank.js'
 import {Button, Icon, Input,Card } from 'react-materialize'
 import Dropzone from 'react-dropzone'
 
+//TODO: request location
 class Submission extends Component{
 	constructor(props){
 		super(props)
@@ -11,6 +12,7 @@ class Submission extends Component{
 			picture:'test picture',
 			category:'',
 			description:'',
+			address:'600 Pennsylvania Ave, Washington D.C.'
 		}
 	}
 	onDrop (accept) {
@@ -24,6 +26,12 @@ class Submission extends Component{
 	}
 	handleCatChange(e){
 		this.setState({category:e.target.value})
+	}
+	handleAddressChange(e){
+		this.setState({address:e.target.value})
+	}
+	home(){
+		this.props.onSelectPage("home")
 	}
 	sub(){
 		console.log(this.state.description)
@@ -56,7 +64,9 @@ class Submission extends Component{
 	      					<option value='Canned Goods'>Canned Goods</option>
 	      					<option value='Other'>Other</option>    				
 	      				</Input>
-	      				<Button s={12} onClick={this.sub.bind(this)}>Submit</Button>
+	      				<Input onChange={this.handleAddressChange.bind(this)} s={12}  placeholder="Address..."><Icon>location_on</Icon></Input>
+	      				<Button s={12} className = "right-button" onClick={this.sub.bind(this)}>Submit</Button>
+						<div s={12} onClick={this.home.bind(this)} className="fake-button">BACK</div>
 	      			</Card>
 				</div>)
 	}

@@ -15,6 +15,7 @@ class ListItem extends Component{
 		})
 		console.log(this.state.pickedup)
 	}
+	
 	render(){
 		return (<div className="left-text list-item">
 					<div>
@@ -23,7 +24,7 @@ class ListItem extends Component{
 						</font>
 					</div>
 					<div>
-						<CardPanel className="teal lighten-4 black-text">
+						<CardPanel className="white lighten-4 black-text">
 						    <p> Item : {this.props.item} </p>
 						    <p> Category : {this.props.category} </p>
 						    <Button onClick = {this.fn.bind(this)} floating large className='red' waves='light' icon={this.state.pickedup?'close':'check'} />
@@ -41,7 +42,9 @@ class ListItems extends Component{
 
 		}
 	}
-
+	home(){
+		this.props.onSelectPage("home")
+	}
 	render(){
 		let temp = JSON.parse(food)
 		let addresses = []
@@ -51,13 +54,19 @@ class ListItems extends Component{
 				locationAddress = obj.location.address
 				addresses.push(obj.location.address)
 			}
+			let temp2 = i?"none":"block"
 			return(
-				<ListItem item={obj.item}
-				key={i}
-				category={obj.category}
-				picture={obj.picture}
-				description={obj.description}
-				locationAddress = {locationAddress}></ListItem>
+				<div className={"list-item"}>
+					<div> 
+						<Button s={12} style={{display: temp2}} className = "right-button" onClick={this.home.bind(this)}>Back</Button>
+					</div>
+					<ListItem item={obj.item}
+					key={i}
+					category={obj.category}
+					picture={obj.picture}
+					description={obj.description}
+					locationAddress = {locationAddress}></ListItem>
+				</div>
 			)
 		})
 	}

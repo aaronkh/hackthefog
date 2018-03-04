@@ -1,0 +1,53 @@
+.aa{
+        background: #E9FCFF;
+        margin-bottom: 48px
+            }
+button{
+    background: white
+}
+.qazwsx{
+    max-width: 80%
+}
+.container{
+    padding-bottom: 48px
+}
+body{
+    height: 48px;
+    background: gray
+}
+ul {
+    list-style-type: none;
+    margin: 10px;
+            padding: 0px;
+            overflow: hidden;
+            background-color: powderblue;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            font-size : 4rem;
+            text-decoration: none;
+            font-family: Brush Script MT, Brush Script Std, cursive;
+        }
+        li a:hover {
+            background-color: #1EABBC;
+        }
+      
+            .topnav header {
+                
+                background: linear-gradient(-90deg, powderblue, #FF85F0);
+                font-family: Brush Script MT, Brush Script Std, cursive;
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            article {
+                text-align: center;
+                
+            }

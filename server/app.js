@@ -63,6 +63,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('err');
 });
-
-app.listen(port, ()=> console.log('Server has been started'))
+app.listen('8080', ()=>{
+	console.log("server started")
+})
 module.exports = app;
