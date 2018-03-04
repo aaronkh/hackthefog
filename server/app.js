@@ -64,5 +64,4 @@ app.use(function(err, req, res, next) {
   res.render('err');
 });
 
-app.listen(port, ()=> console.log('Server has been started'))
 module.exports = app;
