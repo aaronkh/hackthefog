@@ -31,11 +31,8 @@ class ListItem extends Component{
 						    <p> Category : {this.props.category} </p>
 						    <Button onClick = {this.fn.bind(this)} floating large className='red' waves='light' icon={this.state.pickedup?'close':'check'} />
 						    <MediaBox src = {this.props.picture} height = "100" caption = {this.props.description} className="right-image"/>
-
 						</CardPanel>
-						    
-					</div>
-					
+					</div>	
 				</div>)
 	}
 }
