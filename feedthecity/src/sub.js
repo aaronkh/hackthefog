@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {food, account} from './foodbank.js'
-import {Button, Icon, Input,Card } from 'react-materialize'
+import {Button, Icon, Input,Card, Preloader } from 'react-materialize'
 import Dropzone from 'react-dropzone'
 
 //TODO: request location
@@ -12,6 +12,7 @@ class Submission extends Component{
 			picture:'test picture',
 			category:'',
 			description:'',
+			loading: false,
 			address:'600 Pennsylvania Ave, Washington D.C.'
 		}
 	}
@@ -36,10 +37,21 @@ class Submission extends Component{
 	home(){
 		this.props.onSelectPage("home")
 	}
+	geoCallback(pos){
+		this.setState({loading:false})
+		alert("Thanks for the submission!")
+		window.location.reload()
+	}
 	sub(){
-		console.log(this.state.description)
-		console.log(this.state.category)
-		console.log(this.state.picture)
+		this.setState({loading:true})
+		navigator.geolocation.getCurrentPosition(this.geoCallback.bind(this))
+	}
+	renderLoader(){
+		if(this.state.loading)
+			return(<Preloader className="right-button" flashing/>)
+		else{
+			return(<Button size="small" className = "right-button" onClick={this.sub.bind(this)}>Submit</Button>)
+		}
 	}
 	render(){
 		return (<div className = "list-item moreshadow">
@@ -69,7 +81,8 @@ class Submission extends Component{
 	      				</Input>
 	      				<Input onChange={this.handleAddressChange.bind(this)} s={12}  placeholder="Address..."><Icon>location_on</Icon></Input>
 	      				<Input onChange={this.handleContactChange.bind(this)} s={12}  placeholder="Phone Number..."><Icon>phone</Icon></Input>
-	      				<Button s={12} className = "right-button" onClick={this.sub.bind(this)}>Submit</Button>
+	      				
+	      				{this.renderLoader()}
 						<div s={12} onClick={this.home.bind(this)} className="fake-button">BACK</div>
 	      			</Card>
 				</div>)

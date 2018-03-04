@@ -9,7 +9,8 @@ button{
     max-width: 80%
 }
 .container{
-    padding-bottom: 48px
+    padding-bottom: 48px;
+    background: #E9FCFF;
 }
 body{
     height: 48px;

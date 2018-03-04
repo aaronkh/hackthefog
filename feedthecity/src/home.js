@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './skydaddy.jpg'
+// import logo from './skydaddy.jpg'
 import './home.css'
 class Home extends Component{
 	constructor(props){
@@ -32,7 +32,7 @@ class Home extends Component{
             <div className="center">
                      <font size="+2">  <button type="button" onClick={this.sub.bind(this)} >Add a Food Pickup Request</button></font>
                      <font size="+2"> <button type="button" onClick={this.list.bind(this)}  >List of Food Pickups</button></font>
-                     <font size="+2"> <a href="../contact.html"><button type="button">Contact Us</button></a></font>
+                     <font size="+2"> <button type="button" onClick={this.contact.bind(this)}>Contact Us</button></font>
          	</div>
         
         <div className="container">
@@ -41,7 +41,7 @@ class Home extends Component{
               <h1>Do Not Waste Food!</h1>
                 <h2> Our Mission</h2>
                <p>We want to positively impact lives by providing food to the hungry while reducing food waste in our local community. We believe that no one should be left hungry in a city where there is truly adequate food to provide for all. Therefore, we hope to create an interconnected network where people can work together to eliminate food waste and distribute it to as many people who need it.</p>
-                 <img src="skydaddy.jpg" className="qazwsx" alt="doggo"/>
+                 <img src="https://i.imgur.com/Vh3SRbV.jpg" className="qazwsx" alt="doggo"/>
       
                   
             </article>
