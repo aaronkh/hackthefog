@@ -8,7 +8,9 @@
   </head>
   <body>
   	<script>
-  		let temp = {
+  	
+  		function a(){
+  				let temp = {
 	  				"contact":"je",
 					"location": {
   						"address":"600 penn", 
@@ -18,14 +20,21 @@
   						}
   					} 
 				}
-  		function a(){
   			console.log('sjdgaidn')
-  			$.post('test/post',
+  			$.post('userlocation/post',
   				{data:JSON.stringify(temp)}
   			)
   		}
   		function b(){
-  			$.get('test/db', (data)=>console.log(data))
+  			let temp = {
+  				"location":{
+  					"coord":{
+  						"lat":1,
+  						"long":2
+  					}
+  				}
+  			}
+  			$.post('foodbanklocation/list', {data:JSON.stringify(temp)}, (data)=>console.log(data))
   		}
   	</script>	
   	<button id="butt" onclick="a()">

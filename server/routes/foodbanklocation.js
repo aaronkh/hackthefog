@@ -15,17 +15,20 @@ router.post('/del', function(req, res, next){
 		res.send({status:"ok"})
 	})
 })
-router.get('/list', function(req, res, next){
+router.post('/list', function(req, res, next){
 		let data = JSON.parse(req.body.data)
 		let maxY = data.location.coord.long+0.08
 		let maxX = data.location.coord.lat+0.08
 		let minY = data.location.coord.long-0.08
 		let minX = data.location.coord.lat-0.08
+		console.log(data)
 		FoodItem.find(
-			{$and:[
-				{"FoodItem.location.coord.lat":{$gt:minX, $lt:maxX}},
-				{"FoodItem.location.coord.long":{$gt:minY, $lt:maxY}}
-			]}, 
+			{
+			// 	$and:[
+			// 	{"FoodItem.location.coord.lat":{$gt:minX, $lt:maxX}},
+			// 	{"FoodItem.location.coord.long":{$gt:minY, $lt:maxY}}
+			// ]
+		}, 
 			function(err, items){
 				res.send({item:items})
 		})

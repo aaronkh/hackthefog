@@ -63,5 +63,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('err');
 });
-
+app.listen('8080', ()=>{
+	console.log("server started")
+})
 module.exports = app;

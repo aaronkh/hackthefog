@@ -11,7 +11,7 @@ router.get('/test', function(req, res, next) {
   res.json({"hello":"hellos"})
 });
 
-router.get('/post', function(req, res, next){
+router.post('/post', function(req, res, next){
 	let r = JSON.parse(req.body.data)
 	console.log(r)
 	var newUser = new FoodItem(r)
