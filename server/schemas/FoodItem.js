@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 let foodItem = mongoose.Schema({
 	location: {
 			address : {type: String, default: ""},
-		 	coord: [{
+		 	coord: {
 		 		lat:Number,
 		 		long:Number
-		 	}]
+		 	}
 		}, 
 	category : String,
 	picture : {
