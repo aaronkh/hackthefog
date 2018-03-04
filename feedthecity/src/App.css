@@ -1,11 +1,16 @@
 .App {
   text-align: center;
+
 }
 .hidden{
   display: none
 }
 body{
-  background-color: white
+}
+.moreshadow{
+  -webkit-box-shadow: 10px 10px 29px 2px rgba(0,0,0,0.42);
+-moz-box-shadow: 10px 10px 29px 2px rgba(0,0,0,0.42);
+box-shadow: 10px 10px 29px 2px rgba(0,0,0,0.42);
 }
 .list-item{
   margin:0 auto;
@@ -22,6 +27,13 @@ body{
 .right-image{
   float : right;
   transform : translate(0,-90px);
+}
+
+.center-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
