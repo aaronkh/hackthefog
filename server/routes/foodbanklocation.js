@@ -10,7 +10,8 @@ router.get('/test', function(req, res, next) {
 });
 router.post('/del', function(req, res, next){
 	let r = JSON.parse(req.body.data)
-	FoodItem.find({_id:r._id}).remove(function(){
+	console.log(r)
+	FoodItem.find({_id:r.id}).remove(function(){
 		console.log('some stuff removed')
 		res.send({status:"ok"})
 	})

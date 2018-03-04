@@ -36,12 +36,21 @@
   			}
   			$.post('foodbanklocation/list', {data:JSON.stringify(temp)}, (data)=>console.log(data))
   		}
+  		function c(){
+  			let temp = {
+  				"id": "5a9c23de310e349030b48b1c"
+  			}
+  			$.post('foodbanklocation/del', {data:JSON.stringify(temp)})
+  		}
   	</script>	
   	<button id="butt" onclick="a()">
   		post
   	</button>
   	<button id="butt2" onclick="b()">
   		get
+  	</button>
+  	<button onclick="c()">
+  		del
   	</button>
   </body>
   <style>
