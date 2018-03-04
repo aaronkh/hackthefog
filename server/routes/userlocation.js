@@ -2,7 +2,7 @@
 //post image
 //post desc
 //maybe put it in all one method?
-
+var FoodItem = require('../schemas/FoodItem.js')
 var express = require('express');
 var router = express.Router();
 
@@ -12,7 +12,15 @@ router.get('/test', function(req, res, next) {
 });
 
 router.get('/post', function(req, res, next){
-	//save to db
+	let r = JSON.parse(req.body.data)
+	console.log(r)
+	var newUser = new FoodItem(r)
+	newUser.save(function(err){
+		if(err) throw err
+		else console.log("save success")
+	})
+	// next()
+	res.send('ok')
 })
 
 module.exports = router;
