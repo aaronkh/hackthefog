@@ -30,6 +30,9 @@ class Submission extends Component{
 	handleAddressChange(e){
 		this.setState({address:e.target.value})
 	}
+	handleContactChange(e){
+		this.setState({contact:e.target.value})
+	}
 	home(){
 		this.props.onSelectPage("home")
 	}
@@ -65,6 +68,7 @@ class Submission extends Component{
 	      					<option value='Other'>Other</option>    				
 	      				</Input>
 	      				<Input onChange={this.handleAddressChange.bind(this)} s={12}  placeholder="Address..."><Icon>location_on</Icon></Input>
+	      				<Input onChange={this.handleContactChange.bind(this)} s={12}  placeholder="Phone Number..."><Icon>phone</Icon></Input>
 	      				<Button s={12} className = "right-button" onClick={this.sub.bind(this)}>Submit</Button>
 						<div s={12} onClick={this.home.bind(this)} className="fake-button">BACK</div>
 	      			</Card>

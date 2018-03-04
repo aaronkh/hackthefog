@@ -9,6 +9,7 @@
   cursor: pointer;
   color: #26a69a;
 }
+a:link, a:hover, a:active { color: inherit; }
 .hidden{
   display: none
 }

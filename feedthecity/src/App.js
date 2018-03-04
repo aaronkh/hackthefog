@@ -5,6 +5,7 @@ import ListItems from './list.js'
 import Profile from './profile.js'
 import Submission from './sub.js'
 import Home from './home.js'
+import Contact from './contact.js'
 
 
 class App extends Component {
@@ -29,6 +30,9 @@ class App extends Component {
           onSelectPage={this.handleChange.bind(this)}/>
         case "list":
           return <ListItems
+          onSelectPage={this.handleChange.bind(this)}/>
+        case "contact":
+          return <Contact
           onSelectPage={this.handleChange.bind(this)}/>
       }
       

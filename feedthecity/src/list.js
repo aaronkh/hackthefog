@@ -27,6 +27,7 @@ class ListItem extends Component{
 						<CardPanel className="white lighten-4 black-text">
 						    <p> Item : {this.props.item} </p>
 						    <p> Category : {this.props.category} </p>
+						    <p> Contact: {this.props.contact} </p>
 						    <Button onClick = {this.fn.bind(this)} floating large className='red' waves='light' icon={this.state.pickedup?'close':'check'} />
 						    <MediaBox src = {this.props.picture} height = "100" caption = {this.props.description} className="right-image"/>
 						</CardPanel>
@@ -65,6 +66,7 @@ class ListItems extends Component{
 					category={obj.category}
 					picture={obj.picture}
 					description={obj.description}
+					contact={obj.contact}
 					locationAddress = {locationAddress}></ListItem>
 				</div>
 			)

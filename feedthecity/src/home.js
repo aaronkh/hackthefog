@@ -13,6 +13,9 @@ class Home extends Component{
 	list(){
 		this.props.onSelectPage("list")
 	}
+	contact(){
+		this.props.onSelectPage("contact")
+	}
 	render(){
 		return(
 			<div className="aa">
@@ -29,7 +32,7 @@ class Home extends Component{
             <div className="center">
                      <font size="+2">  <button type="button" onClick={this.sub.bind(this)} >Add a Food Pickup Request</button></font>
                      <font size="+2"> <button type="button" onClick={this.list.bind(this)}  >List of Food Pickups</button></font>
-                     <font size="+2"> <button type="button"  >Contact Us</button></font>
+                     <font size="+2"> <a href="../contact.html"><button type="button">Contact Us</button></a></font>
          	</div>
         
         <div className="container">
