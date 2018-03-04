@@ -1,3 +1,4 @@
+"use strict"
 //USER OPTIONS
 const port = 8080
 //
@@ -12,8 +13,8 @@ var http = require('http')
 //db stuff
 const mongoose = require('mongoose')
 mongoose.connect("mongodb://localhost/feed")
-FoodItem = require('./schemas/FoodItem')
-User = require('./schemas/User')
+let FoodItem = require('./schemas/FoodItem')
+let User = require('./schemas/User')
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -27,7 +28,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,6 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const userlocation = require('./routes/userlocation')
 const foodbanklocation = require('./routes/foodbanklocation')
+const test = require('./routes/test')
+app.use('/test', test)
 app.use('/userlocation', userlocation)
 app.use('/foodbanklocation', foodbanklocation)
 
@@ -58,7 +61,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('err');
 });
 
 app.listen(port, ()=> console.log('Server has been started'))
